@@ -20,6 +20,37 @@ Nous utilisons plusieurs fichiers pour pouvoir réaliser une application Symfony
 | `templates` | Si le *front* de l'application est gérée via *Symfony*, c'est ici qu'il faudra le coder, souvent grâce à `twig` |
 
 ### Créer un `Controller`
+Nous avons ici le choix entre deux commandes :
+* `symfony console make:controller` : il nous demandera alors le nom du controller que nous souhaitons créer (Attention, le nom doit être au singulier et respecter le CamelCase)
+![symfony console make:controller](./pictures/makeController.png)
+* `symfony console make:controller NomDuController` : alors le controller sera créé
+
+Il est également possible de d'apporter des spécificités telles que :
+* `symfony console make:controller unDossier\NomDuController` : cela permettra de placer le controller dans le dossier souhaité
+* `symfony console make:controller --no-template` : cela empêchera la génération d'un template qui lui est associé.
+
+**Symfony**  a donc généré le controller suivant :
+```php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class MovieController extends AbstractController
+{
+    #[Route('/movie', name: 'app_movie')]
+    public function index(): Response
+    {
+        return $this->render('movie/index.html.twig', [
+            'controller_name' => 'MovieController',
+        ]);
+    }
+}
+```
+Si l'option `--no-template`n'a pas été saisie, alors un fichier s'est agalement générer dans le dossier `/templates/nomDuController`.
+
+### Créer une Entity
 
 ## Commandes utiles
 <details>
@@ -45,6 +76,13 @@ Résultat :
 
 ```sh
 symfony new --webapp NomDeLApplication
+```
+</details>
+<details>
+<summary>Lancer un serveur local</summary>
+
+```sh
+symfony server:start
 ```
 </details>
 <details>
