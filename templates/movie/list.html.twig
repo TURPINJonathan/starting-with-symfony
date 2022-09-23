@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des films !
+{% endblock %}
+
+{% block body %}
+
+	<div class="d-flex justify-content-center flex-column align-items-center">
+		<h1>Bienvenue au cinéma !</h1>
+		<div>
+			<a href="{{ path('app_load_movies') }}">
+				<button type="button" class="btn btn-primary btn-lg">Charger la liste des films</button>
+			</a>
+			<a href="{{ path('app_movie') }}">
+				<button type="button" class="btn btn-primary btn-lg">Menu Principal</button>
+			</a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Description</th>
+					<th scope="col">Year</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for movie in movies_list %}
+					<tr>
+						<td>{{ movie.name }}</td>
+						<td>{{ movie.description }}</td>
+						<td>{{ movie.year }}</td>
+						<td>
+							<a href="{{ path('app_movie_show', {'id': movie.id}) }}">
+								<button type="button" class="btn btn-primary btn-sm">
+									Détails
+								</button>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}

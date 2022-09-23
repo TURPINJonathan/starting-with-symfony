@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ movie.name }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="d-flex justify-content-center flex-column align-items-center">
+		<h1>Bienvenue au cinéma !</h1>
+		<div>
+			<a href="{{ path('app_movie_list') }}">
+				<button type="button" class="btn btn-primary btn-lg">Retour à la liste des films</button>
+			</a>
+			<a href="{{ path('app_movie') }}">
+				<button type="button" class="btn btn-primary btn-lg">Menu Principal</button>
+			</a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" colspan="2">Informations</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+						<td>
+              Nom du film
+            </td>
+						<td>
+              {{ movie.name }}
+            </td>
+					</tr>
+					<tr>
+						<td>
+              Description
+            </td>
+						<td>
+              {{ movie.description }}
+            </td>
+					</tr>
+					<tr>
+						<td>
+              Date de sortie
+            </td>
+						<td>
+              {{ movie.year }}
+            </td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}
