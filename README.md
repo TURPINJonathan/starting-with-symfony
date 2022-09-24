@@ -1,4 +1,4 @@
-# Satrting With Symfony
+# Starting With Symfony
 **SOMMAIRE**
 - [Les basiques](./Cours/les_basiques.md)
 - [Les controller](./Cours/controller.md)
