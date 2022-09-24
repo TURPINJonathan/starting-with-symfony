@@ -1,10 +1,12 @@
 # Satrting With Symfony
 **SOMMAIRE**
-- [Les basiques](./les_basiques.md)
-- [Les controller](./controller.md)
-- [Les entity](./entity.md)
-- [Les bases de données](./bdd.md)
-- [Les commandes utiles](./commandes_utiles.md) 
+- [Les basiques](./Cours/les_basiques.md)
+- [Les controller](./Cours/controller.md)
+- [Les entity](./Cours/entity.md)
+- [Les bases de données](./Cours/bdd.md)
+- [Les Injections de Dépendances](./Cours/injections_dependances.md)
+- [Les tests](./Cours/test.md)
+- [Les commandes utiles](./Cours/commandes_utiles.md) 
 
 ## Créer un projet Symfony
 

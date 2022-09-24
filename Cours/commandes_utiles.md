@@ -1,13 +1,13 @@
 # COMMANDES UTILES
-[Menu principal](./README.md)
+[Menu principal](../README.md)
 <details>
 <summary>Connaître les versions locales PHP</summary>
 
-```sh
-symfony local:php:list
-```
-Résultat :
-![symfony local:php:list](./pictures/symfony_localphplist.png)
+  ```sh
+  symfony local:php:list
+  ```
+  Résultat :  
+  ![symfony local:php:list](./pictures/symfony_localphplist.png)
 </details>
 <details>
 <summary>Lister les commandes Symfony</summary>
@@ -15,7 +15,7 @@ Résultat :
 ```sh
 symfony local:php:list
 ```
-Résultat :
+Résultat :  
 ![symfony list](./pictures/symfony_list.png)
 </details>
 <details>

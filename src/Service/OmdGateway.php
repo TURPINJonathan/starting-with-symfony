@@ -9,6 +9,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class OmdGateway
 {
+  // Injection de dépendance
   public function __construct(
       private HttpClientInterface $httpClient,
   ) {}
@@ -17,8 +18,8 @@ class OmdGateway
   {
       $response = $this->httpClient->request('GET', sprintf(
           'https://www.omdbapi.com/?apikey=%s&t=%s',
-          'e0ded5e2',
-          $movie->getName()
+          'e0ded5e2', // => remplacera le premier %s
+          $movie->getName() // => remplacera le second %s
       ));
 
       $movieData = $response->toArray();

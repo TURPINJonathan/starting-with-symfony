@@ -1,6 +1,6 @@
 # LES BASES DE DONNEES
-[Menu principal](./README.md)  
-## Lier sa base de données avec Symfony
+[Menu principal](../README.md)  
+## Lier sa base de données avec *Symfony*
 Afin de pouvoir lier notre production avec une base de données, il faut avant tout alimenter les différents paramètres contenus dans le fichier `.env`, situé à la racine du projet.
 
 En effet, dans ce fichier, les lignes *30* à *32* déterminent quel est le **S**ystème de **G**estion de **B**ases de **D**onnées **R**elationnelles *(SGBDR)* choisi.  
@@ -14,7 +14,7 @@ Il sera donc important non seulement de faire son choix, mais également d'affin
 ## Interagir avec sa base de données
 
 ### Créer la base donnée
-La création de fait simplement par la commande **Symfony**
+La création de fait simplement par la commande *Symfony*
 ```sh
 symfony console doctrine:database:create
 ```
@@ -40,5 +40,10 @@ symfony console doctrine:schema:update --dump-sql
 Si les requêtes nous sont satisfaisantes, nous pouvons alors mettre à jour le `schema` :
 ```sh
 symfony console doctrine:schema:update
+```
+### Faire des requêtes SQL avec *Symfony*
+Il est possible de faire des requêtes SQL directement via la *console* avec *Symfony*
+```sh
+symfony console doctrine:query:sql "MA REQUETE SQL"
 ```
 
