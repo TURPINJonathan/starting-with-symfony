@@ -82,3 +82,26 @@ symfony console doctrine:fixtures:load
 symfony run bin/phpunit || php bin/phpunit
 ```
 </details>
+<details>
+<summary>Les services</summary>
+
+```sh
+// Liste les services
+symfony console debug:container
+```
+</details>
+<details>
+<summary>Les commandes</summary>
+
+```sh
+symfony console make:command
+composer require symfony/http-client
+```
+</details>
+<details>
+<summary>Dépendance Http Client</summary>
+
+```sh
+composer require symfony/http-client
+```
+</details>

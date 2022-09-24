@@ -3,13 +3,19 @@
 namespace App\Controller;
 
 use App\Entity\Movie;
+use App\Service\OmdGateway;
 use App\Repository\MovieRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MovieController extends AbstractController
 {
+  // Injection de dépendance
+  public function __construct(
+    private OmdGateway $omdbGateway,
+  ){}
+
   #[Route('/movie', name: 'app_movie')]
   public function index(): Response
   {
@@ -35,8 +41,10 @@ class MovieController extends AbstractController
   #[Route('/movie/{id}', name: 'app_movie_show', requirements: ['id' => '\d+'])]
   public function show(Movie $movie): Response
   {
+    $poster = $this->omdbGateway->getPosterByMovie($movie) ?? 'https://www.vector-eps.com/wp-content/gallery/movie-photo-tape-images/thumbs/thumbs_movie-photo-tape-image3.jpg';
     return $this->render('movie/show.html.twig', [
       'movie' => $movie,
+      'poster' => $poster,
     ]);
   }
 }

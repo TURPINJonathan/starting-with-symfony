@@ -19,40 +19,27 @@
 			<thead>
 				<tr>
 					<th scope="col" colspan="2">Informations</th>
+          <th scope="col">Poster</th>
 				</tr>
 			</thead>
 			<tbody>
 					<tr>
-						<td>
-              Nom du film
-            </td>
-						<td>
-              {{ movie.name }}
-            </td>
-					</tr>
+            <td>Nom du film</td>
+            <td>{{ movie.name }}</td>
+            <td rowspan="4"><img src="{{ poster }}" /></td>
+          </tr>
 					<tr>
-						<td>
-              Type
-            </td>
-						<td>
-              {{ movie.genre }}
-            </td>
-					</tr>
+            <td>Genre</td>
+            <td>{{ movie.genre }}</td>
+          </tr>
 					<tr>
-						<td>
-              Description
-            </td>
-						<td>
-              {{ movie.description }}
-            </td>
-					</tr>
+            <td>Description</td>
+            <td>{{ movie.description }}</td>
+          </tr>
 					<tr>
-						<td>
-              Date de sortie
-            </td>
-						<td>
-              {{ movie.year }}
-            </td>
+            <td>Date de sortie</td>
+            <td>{{ movie.year }}</td>
+          </tr>
 					</tr>
 			</tbody>
 		</table>
