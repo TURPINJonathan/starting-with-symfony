@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome !
+{% endblock %}
+
+{% block body %}
+
+	<div class="d-flex justify-content-center flex-column align-items-center">
+		<h1>Bienvenue au cinéma !</h1>
+		<div>
+			<a href="{{ path('app_load_movies') }}">
+        <button type="button" class="btn btn-primary btn-lg">Charger la liste des films</button>
+      </a>
+			<a href="{{ path('app_movie_list') }}">
+        <button type="button" class="btn btn-primary btn-lg">Liste des films</button>
+      </a>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoadMovieController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="d-flex justify-content-center flex-column align-items-center">
+		<h1>Bienvenue au cinéma !</h1>
+		<div>
+			<a href="{{ path('app_load_movies') }}"><button type="button" class="btn btn-primary btn-lg">Retour au menu principal</button></a>
+		</div>
+	</div>
+{% endblock %}
