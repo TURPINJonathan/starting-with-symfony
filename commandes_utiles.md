@@ -60,3 +60,25 @@ symfony console doctrine:schema:update
 
 ```
 </details>
+<details>
+<summary>Les tests</summary>
+
+```sh
+symfony console make:test
+symfony run bin/phpunit
+symfony run bin/phpunit --testdox
+symfony run bin/phpunit --filter NomDuTest
+symfony run bin/phpunit --filter NomDuTest | less
+```
+</details>
+<details>
+<summary>Les fixtures</summary>
+
+```sh
+composer require orm-fixtures --dev
+symfony console make:fixtures
+symfony console doctrine:fixtures:load
+
+symfony run bin/phpunit || php bin/phpunit
+```
+</details>
